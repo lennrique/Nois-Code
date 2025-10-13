@@ -1,0 +1,590 @@
+<link rel="stylesheet" href="nois-code.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nóis Code - Hub colaborativo para devs brasileiros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="nois-code.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS DO INDEX */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .search-section {
+            padding: 40px 0;
+            background: var(--background);
+        }
+
+        .search-box {
+            background-color: var(--background-light);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: var(--space-4);
+            border: var(--border-width) solid var(--gray-extra-light);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-base);
+            transition: all var(--transition-fast);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .developers-section {
+            padding: 60px 0;
+            background: var(--background-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: var(--font-size-3xl);
+            color: var(--text-primary);
+        }
+
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .developer-card {
+            background-color: var(--background-light);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+
+        .developer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--space-6);
+            text-align: center;
+        }
+
+        .developer-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--background-light);
+            margin: 0 auto;
+            background-color: var(--gray-extra-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--background-light);
+        }
+
+        .developer-name {
+            margin-top: 15px;
+            font-size: 1.3rem;
+        }
+
+        .developer-role {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: var(--space-6);
+        }
+
+        .developer-info {
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: var(--space-3);
+        }
+
+        .info-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .developer-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .stack-tag {
+            background-color: var(--gray-extra-light);
+            color: var(--text-primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: var(--font-size-xs);
+        }
+
+        .card-footer {
+            padding: var(--space-4) var(--space-6);
+            background-color: var(--background-dark);
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-3);
+        }
+
+        /* Header específico do index */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4) 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-xl);
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-6);
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: var(--font-weight-medium);
+            transition: color var(--transition-fast);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: var(--space-3);
+            align-items: center;
+        }
+
+        .user-menu {
+            position: relative;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid var(--gray-extra-light);
+        }
+
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: var(--background-light);
+            min-width: 200px;
+            box-shadow: var(--shadow-xl);
+            border-radius: var(--border-radius);
+            padding: var(--space-2) 0;
+            z-index: var(--z-dropdown);
+            border: var(--border-width) solid var(--gray-extra-light);
+        }
+
+        .user-dropdown.show {
+            display: block;
+            animation: slideInDown 0.3s ease-out;
+        }
+
+        .user-dropdown a {
+            display: block;
+            padding: var(--space-3) var(--space-4);
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: background-color var(--transition-fast);
+            border: none;
+        }
+
+        .user-dropdown a:hover {
+            background-color: var(--background-dark);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+
+            nav ul {
+                gap: var(--space-4);
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .developers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-footer {
+                flex-direction: column;
+            }
+
+            .auth-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .auth-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-code logo-icon"></i>
+                    <span>Nóis Code</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#developers">Descobrir</a></li>
+                        <li><a href="#">Como funciona</a></li>
+                        <li><a href="#">Sobre</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons" id="authButtons">
+                    <!-- Será preenchido pelo JavaScript -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Conecte-se com <span style="color: var(--secondary-light);">devs brasileiros</span> para colaborar</h1>
+            <p>Encontre parceiros para freelas, open-source ou hackathons no hub colaborativo feito para o jeito BR de trabalhar!</p>
+            <div class="hero-buttons">
+                <a href="cadastro.html" class="btn btn-primary">Criar perfil</a>
+                <a href="#developers" class="btn btn-outline" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">Explorar devs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <form class="search-form" id="searchForm">
+                    <input type="text" class="search-input" placeholder="Buscar por tecnologia, nome ou stack..." id="searchInput">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Section -->
+    <section class="developers-section" id="developers">
+        <div class="container">
+            <h2 class="section-title">Desenvolvedores em Destaque</h2>
+            <div class="developers-grid" id="developersGrid">
+                <!-- Os cards serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nóis Code</h3>
+                    <p>O hub colaborativo para desenvolvedores brasileiros se conectarem para freelas, open-source ou hackathons.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#developers">Descobrir</a></li>
+                        <li><a href="#">Como funciona</a></li>
+                        <li><a href="#">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Nóis Code. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script>
+        // Sistema de Autenticação e Navegação
+        class AuthUI {
+            static init() {
+                this.updateAuthButtons();
+                this.loadDevelopers();
+                this.setupSearch();
+            }
+
+            static updateAuthButtons() {
+                const authButtons = document.getElementById('authButtons');
+                const user = AuthService.getCurrentUser();
+
+                if (user) {
+                    const firstLetter = user.nome ? user.nome.charAt(0).toUpperCase() : 'U';
+                    
+                    authButtons.innerHTML = `
+                        <div class="user-menu">
+                            <div class="user-avatar" onclick="AuthUI.toggleDropdown()">
+                                ${firstLetter}
+                            </div>
+                            <div class="user-dropdown" id="userDropdown">
+                                <a href="dashboard.html"><i class="fas fa-user"></i> Meu Perfil</a>
+                                <a href="#" onclick="AuthUI.logout()"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    authButtons.innerHTML = `
+                        <a href="login.html" class="btn btn-ghost">Entrar</a>
+                        <a href="cadastro.html" class="btn btn-primary">Cadastrar</a>
+                    `;
+                }
+            }
+
+            static toggleDropdown() {
+                const dropdown = document.getElementById('userDropdown');
+                dropdown.classList.toggle('show');
+            }
+
+            static logout() {
+                AuthService.logout();
+                this.updateAuthButtons();
+                window.location.href = 'index.html';
+            }
+
+            static loadDevelopers() {
+                const developersGrid = document.getElementById('developersGrid');
+                
+                // Dados mockados - na implementação real viria da API
+                const developers = [
+                    {
+                        name: "Ana Silva",
+                        role: "Desenvolvedora Full-Stack",
+                        location: "São Paulo, SP",
+                        availability: "Disponível para freelas",
+                        interests: "Open-source, React, Node.js",
+                        bio: "Desenvolvedora com 5 anos de experiência, apaixonada por criar soluções inovadoras.",
+                        stack: ["JavaScript", "React", "Node.js", "PostgreSQL"],
+                        avatar: "A"
+                    },
+                    {
+                        name: "Carlos Oliveira",
+                        role: "Desenvolvedor Back-end",
+                        location: "Salvador, BA",
+                        availability: "Disponível para projetos",
+                        interests: "APIs, Python, Cloud",
+                        bio: "Especialista em desenvolvimento de APIs escaláveis e arquitetura de software.",
+                        stack: ["Python", "Django", "AWS", "Docker"],
+                        avatar: "C"
+                    },
+                    {
+                        name: "Mariana Santos",
+                        role: "Desenvolvedora Front-end",
+                        location: "Porto Alegre, RS",
+                        availability: "Em projeto atualmente",
+                        interests: "UI/UX, Acessibilidade",
+                        bio: "Desenvolvedora front-end focada em criar experiências de usuário excepcionais e acessíveis.",
+                        stack: ["HTML/CSS", "JavaScript", "React", "Figma"],
+                        avatar: "M"
+                    }
+                ];
+
+                developersGrid.innerHTML = developers.map(dev => `
+                    <div class="developer-card">
+                        <div class="card-header">
+                            <div class="developer-avatar">
+                                ${dev.avatar}
+                            </div>
+                            <h3 class="developer-name">${dev.name}</h3>
+                            <p class="developer-role">${dev.role}</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="developer-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>${dev.location}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>${dev.availability}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>${dev.interests}</span>
+                                </div>
+                            </div>
+                            <p>${dev.bio}</p>
+                            <div class="developer-stack">
+                                ${dev.stack.map(tech => `<span class="stack-tag">${tech}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-outline">Ver perfil</a>
+                            <a href="#" class="btn btn-primary">Contatar</a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            static setupSearch() {
+                const searchForm = document.getElementById('searchForm');
+                const searchInput = document.getElementById('searchInput');
+
+                searchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const query = searchInput.value.trim();
+                    
+                    if (query) {
+                        this.performSearch(query);
+                    }
+                });
+            }
+
+            static performSearch(query) {
+                // Implementação da busca
+                alert(`Buscando por: ${query}\n\nEsta funcionalidade será implementada com a API.`);
+                
+                // Na implementação real, aqui viria a chamada para a API
+                // ApiService.searchDevelopers(query).then(developers => {
+                //     this.displaySearchResults(developers);
+                // });
+            }
+        }
+
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            AuthUI.init();
+            
+            // Fechar dropdown ao clicar fora
+            document.addEventListener('click', function(e) {
+                const dropdown = document.getElementById('userDropdown');
+                const avatar = document.querySelector('.user-avatar');
+                
+                if (dropdown && dropdown.classList.contains('show') && 
+                    !dropdown.contains(e.target) && 
+                    !avatar.contains(e.target)) {
+                    dropdown.classList.remove('show');
+                }
+            });
+        });
+
+        // Verificar autenticação ao carregar a página
+        if (AuthService.isAuthenticated()) {
+            console.log('Usuário autenticado:', AuthService.getCurrentUser());
+        }
+    </script>
+</body>
+</html>

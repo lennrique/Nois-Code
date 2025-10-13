@@ -1,0 +1,244 @@
+<link rel="stylesheet" href="nois-code.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nois Code - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h1>Nois Code</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item active">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-book"></i>
+                        <span>Meus Cursos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-code"></i>
+                        <span>Exercícios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progresso</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <span>Comunidade</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-trophy"></i>
+                        <span>Conquistas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="user-profile">
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=João+Silva&background=7C3AED&color=fff" alt="João Silva">
+                    <div class="user-details">
+                        <span class="user-name">João Silva</span>
+                        <span class="user-level">Nível: Intermediário</span>
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="user-stat">
+                        <span class="stat-value">85%</span>
+                        <span class="stat-label">Progresso</span>
+                    </div>
+                    <div class="user-stat">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">Conquistas</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <div class="welcome-section">
+                        <h1>Olá, João! <span class="welcome-emoji">😊</span></h1>
+                        <p class="welcome-message">Bem-vindo de volta ao Nois Code. Continue sua jornada na programação!</p>
+                        <div class="daily-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Dica do dia: Pratique pelo menos 30 minutos por dia para melhores resultados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="current-date">
+                        <div class="date-day">Segunda-feira</div>
+                        <div class="date-full">15 de Janeiro, 2024</div>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar cursos, exercícios...">
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-notification">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Estatísticas Rápidas -->
+            <section class="stats-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Estatísticas Rápidas
+                    </h2>
+                    <span class="last-update">Atualizado agora</span>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value">85%</h3>
+                            <p class="stat-label">Progresso Geral</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value">42h 15m</h3>
+                            <p class="stat-label">Tempo de Estudo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value">24/50</h3>
+                            <p class="stat-label">Conquistas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value">15 dias</h3>
+                            <p class="stat-label">Sequência Atual</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conteúdo Principal -->
+            <div class="main-grid">
+                <!-- Atividades Recentes -->
+                <section class="recent-activities">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-history"></i>
+                            Atividades Recentes
+                        </h2>
+                        <a href="#" class="see-all">Ver histórico completo</a>
+                    </div>
+                    
+                    <div class="activities-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Exercício <strong>"Calculadora Simples"</strong> concluído</p>
+                                <span class="activity-time">Há 2 horas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon primary">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Aula <strong>"Arrays em JavaScript"</strong> assistida</p>
+                                <span class="activity-time">Há 1 dia</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p>Iniciou o exercício <strong>"Manipulação DOM"</strong></p>
+                                <span class="activity-time">Há 2 dias</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Continue Aprendendo -->
+                <section class="continue-learning">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-rocket"></i>
+                            Continue Aprendendo
+                        </h2>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-info">
+                            <h3>JavaScript Básico</h3>
+                            <p>Variáveis, funções e estruturas de controle</p>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 65%;"></div>
+                                </div>
+                                <span class="progress-text">65% concluído</span>
+                            </div>
+                        </div>
+                        <button class="btn-continue">Continuar</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

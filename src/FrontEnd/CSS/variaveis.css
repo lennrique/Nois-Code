@@ -1,0 +1,6 @@
+.meu-elemento {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}

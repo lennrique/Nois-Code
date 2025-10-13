@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+
+# Lockfiles (choose one or keep both if you sometimes commit them intentionally)
+package-lock.json
+yarn.lock
+
+# Dev tools
+.nodemonignore
+
+# Build / output
+/dist/
+/build/
+
+# Logs
+logs/
+*.log
+
+# Coverage
+/coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Misc
+*.bak
+upload/
