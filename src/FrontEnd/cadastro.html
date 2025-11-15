@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - NoisCode</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <i class="fas fa-code logo-icon"></i>
+                    <span>NoisCode</span>
+                </div>
+                <h1>Criar Conta</h1>
+                <p>Junte-se à nossa comunidade</p>
+            </div>
+
+            <div id="cadastroError" class="error-message" style="display: none;"></div>
+
+            <form id="cadastroForm" class="auth-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="seu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" class="form-control" required placeholder="Mínimo 6 caracteres" minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarSenha">Confirmar Senha</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" required placeholder="Digite a senha novamente" minlength="6">
+                </div>
+
+                <button type="submit" class="btn">
+                    Criar Conta
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Já tem uma conta? <a href="/login" class="auth-link">Faça login aqui</a></p>
+                <p><a href="/" class="auth-link">← Voltar para Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/auth.js"></script>
+</body>
+</html>
